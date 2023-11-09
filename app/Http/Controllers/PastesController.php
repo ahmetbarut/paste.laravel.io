@@ -16,8 +16,8 @@ class PastesController extends Controller
 
     public function show(Paste $paste)
     {
-        if (request()->expectsJson()){
-            return $paste->only('paste', 'hash');
+        if (request()->expectsJson()) {
+            return $paste->only('code', 'hash');
         }
 
         return view('show', compact('paste'));
@@ -43,7 +43,7 @@ class PastesController extends Controller
     public function paste(PasteRequest $request)
     {
         $paste = Paste::fromRequest($request);
-        
+
 
         return $paste->only('code', 'hash');
     }
