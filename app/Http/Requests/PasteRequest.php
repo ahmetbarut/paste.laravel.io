@@ -24,7 +24,7 @@ class PasteRequest extends FormRequest
     public function rules()
     {
         return [
-            'code' => 'required|max:50000',
+            'code' => 'required|max:100000',
         ];
     }
 }
